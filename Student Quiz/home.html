@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Student Quiz</title>
+
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+    
+    <nav class="nav-wrapper black">
+        <div class="container">
+            <a href="#home.html" class="brand-logo center">STUDENT QUIZ</a>
+        </div>
+    </nav>
+
+    <section class="container section">
+        <div class="row">
+            <div class="col s12 l6 offset-l3">
+                <form class="myform" name="id" onsubmit="submitted(event)">
+                <h4 class="center-align white-text">Student NAME</h4>
+            
+                <div class="progress yellow">
+                    <div class="indeterminate"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons white-text prefix">account_box</i>
+                    <input type="text" class="white-text" id="name">
+                    <label for="name">Name Here</label>
+                    <p class="center"><button type="submit" class="btn blue" 
+                        onclick="this.style.display='none'">Submit Name</button></p>
+                </div>
+
+                <div>
+                    <p class="white-text green">QUIZ RULES :</p>
+                    <p class="black-text white ">1. YOU CANNOT SKIP ANY QUESTIONS.</p>
+                    <p class="black-text white ">2. YOU CANNOT GO TO PREVIOUS QUESTION.</p>
+                    <p class="black-text white ">3. TRY ATTEMPTING ALL WITHIN GIVEN TIME</p>
+                </div>
+
+                <div class="progress yellow">
+                    <div class="indeterminate"></div>
+                </div>
+
+                <p class="center"><a href="quiz.html" class="btn blue">Let's Start</a></p>
+                
+            </form>
+            </div>
+        </div>
+    </section>
+   
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+<script>
+    function submitted(e){
+        e.preventDefault();
+
+        let namee = document.forms["id"]["name"].value;
+        sessionStorage.setItem("name", namee);
+    }
+</script>
+
+</body>
+</html>
